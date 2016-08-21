@@ -35,8 +35,6 @@ RUN rm -rf /src && \
 
 VOLUME /comics
     
-RUN YACReaderLibraryServer create-library MyComics /comics
-    
 EXPOSE 8080
 
 ENTRYPOINT ["YACReaderLibraryServer","start"]
