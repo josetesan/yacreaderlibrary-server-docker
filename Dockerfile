@@ -24,6 +24,7 @@ RUN cd /     && \
     rm -rf /var/cache/apt &&\
     apt-get purge -y git wget build-essential && \
     apt-get -y autoremove
+ADD YACReaderLibrary.ini /root/.local/share/YACReader/YACReaderLibrary/
 
 VOLUME /comics
 
