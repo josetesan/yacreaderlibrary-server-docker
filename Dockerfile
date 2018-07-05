@@ -30,4 +30,6 @@ VOLUME /comics
 
 EXPOSE 8080
 
+ENV LC_ALL=C.UTF8
+
 ENTRYPOINT ["YACReaderLibraryServer","start"]
