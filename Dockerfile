@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch as builder
 MAINTAINER muallin@gmail.com
 
 WORKDIR /src
@@ -19,11 +19,12 @@ RUN cd /src/git/YACReaderLibraryServer && \
     qmake YACReaderLibraryServer.pro && \
     make  && \
     make install
-RUN cd /     && \
-    rm -rf /src && \
-    rm -rf /var/cache/apt &&\
-    apt-get purge -y git wget build-essential && \
-    apt-get -y autoremove
+
+
+FROM alpine:latest 
+
+COPY --from=builder YACReaderLibraryServer .
+
 ADD YACReaderLibrary.ini /root/.local/share/YACReader/YACReaderLibrary/
 
 VOLUME /comics
