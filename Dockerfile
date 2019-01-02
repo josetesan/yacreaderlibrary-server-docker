@@ -23,7 +23,7 @@ RUN cd /src/git/YACReaderLibraryServer && \
 
 FROM alpine:latest 
 
-COPY --from=builder YACReaderLibraryServer .
+COPY --from=builder /usr/bin/YACReaderLibraryServer .
 
 ADD YACReaderLibrary.ini /root/.local/share/YACReader/YACReaderLibrary/
 
