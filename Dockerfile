@@ -26,7 +26,8 @@ RUN cd /     && \
     apt-get -y autoremove
 ADD YACReaderLibrary.ini /root/.local/share/YACReader/YACReaderLibrary/
 
-VOLUME /config /comics
+# add specific volumes: configuration, comics repository, and hidden library data to separate them
+VOLUME ["/config", "/comics", "/comics/.yacreaderlibrary"]
 
 EXPOSE 8080
 
