@@ -27,8 +27,8 @@ RUN cd /     && \
     apt-get -y autoremove
 ADD YACReaderLibrary.ini /root/.local/share/YACReader/YACReaderLibrary/
 
-ADD entrypoint.sh /
-RUN /bin/sh -c 'chmod +x /entrypoint.sh'
+#ADD entrypoint.sh /
+#RUN /bin/sh -c 'chmod +x /entrypoint.sh'
 
 # add specific volumes: configuration, comics repository, and hidden library data to separate them
 VOLUME ["/config", "/comics", "/comics/.yacreaderlibrary"]
