@@ -18,7 +18,7 @@ RUN cd compressed_archive/unarr/ && \
     cd unarr-master/lzmasdk &&\
     ln -s 7zTypes.h Types.h
 RUN cd /src/git/YACReaderLibraryServer && \
-    qmake CONFIG += 7zip YACReaderLibraryServer.pro && \
+    qmake "CONFIG+=7zip" YACReaderLibraryServer.pro && \
     make  && \
     make install
 RUN cd /     && \
