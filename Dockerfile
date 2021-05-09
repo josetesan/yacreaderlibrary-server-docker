@@ -18,7 +18,7 @@ RUN cd compressed_archive/unarr/ && \
     cd unarr-master/lzmasdk &&\
     ln -s 7zTypes.h Types.h
 RUN cd compressed_archive/ &&\
-    git clone https://github.com/stonewell/lib7zip ./lib7zip
+    git clone https://github.com/stonewell/lib7zip ./libp7zip
 RUN cd /src/git/YACReaderLibraryServer && \
     qmake "CONFIG+=7zip" YACReaderLibraryServer.pro && \
     make  && \
