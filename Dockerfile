@@ -10,8 +10,6 @@ RUN git clone https://github.com/YACReader/yacreader.git . && \
     git checkout 9.8.1
 RUN cd compressed_archive/ &&\
     git clone https://github.com/btolab/p7zip ./libp7zip
-RUN cd /src/git/compressed_archive/libp7zip && \
-    git checkout 16.0.2
 RUN cd /src/git/YACReaderLibraryServer && \
     qmake "CONFIG+=7zip server_standalone" YACReaderLibraryServer.pro && \
     make  && \
