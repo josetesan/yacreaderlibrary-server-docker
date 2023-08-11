@@ -1,4 +1,5 @@
 FROM debian:bullseye
+MAINTAINER muallin@gmail.com
 
 WORKDIR /src/git
 
@@ -12,7 +13,6 @@ RUN git clone https://github.com/YACReader/yacreader.git . && \
     git checkout ${YACREADER_VERSION}
 
 RUN cd /src/git/YACReaderLibraryServer && \
-#    qmake "CONFIG+=7zip server_standalone" YACReaderLibraryServer.pro && \
     qmake "CONFIG+=server_standalone" YACReaderLibraryServer.pro && \
     make  && \
     make install
