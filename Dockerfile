@@ -41,6 +41,5 @@ VOLUME ["/comics"]
 EXPOSE 8080
 
 ENV LC_ALL=C.UTF8
-    #PATH="/app/bin:${PATH}"
 
 ENTRYPOINT ["YACReaderLibraryServer","start"]
