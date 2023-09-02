@@ -14,7 +14,7 @@ RUN git clone https://github.com/YACReader/yacreader.git . && \
 
 RUN cd /src/git/YACReaderLibraryServer && \
     qmake PREFIX=/app "CONFIG+=server_standalone" YACReaderLibraryServer.pro && \
-    make  && \
+    make -j4 && \
     make install
 
 FROM debian:bullseye as runner
